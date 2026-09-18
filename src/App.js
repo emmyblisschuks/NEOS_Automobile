@@ -4,7 +4,6 @@ import './index.css';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -18,11 +17,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Admin routes - no navbar/footer */}
         <Route path="/admin/login" element={<AdminLogin />} />
         <Route path="/admin" element={<AdminDashboard />} />
-
-        {/* Public routes */}
         <Route path="/*" element={
           <>
             <Navbar />
@@ -34,7 +30,6 @@ function App() {
               <Route path="/contact" element={<Contact />} />
             </Routes>
             <Footer />
-            <WhatsAppButton />
           </>
         } />
       </Routes>

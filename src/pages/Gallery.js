@@ -99,7 +99,7 @@ export default function Gallery() {
             padding: '1rem', animation: 'fadeIn 0.2s ease',
           }}
         >
-          <button onClick={() => setLightbox(l => (l - 1 + filtered.length) % filtered.length)}
+          <button 
             style={{ position: 'absolute', left: '1rem', background: 'rgba(255,255,255,0.1)', border: 'none', borderRadius: '50%', width: '48px', height: '48px', color: '#fff', cursor: 'pointer', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             onClick={e => { e.stopPropagation(); setLightbox(l => (l - 1 + filtered.length) % filtered.length); }}>
             ‹

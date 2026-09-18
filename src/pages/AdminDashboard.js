@@ -70,7 +70,7 @@ export default function AdminDashboard() {
     setUploading(true);
     const ext = file.name.split('.').pop();
     const filename = `${Date.now()}.${ext}`;
-    const { data, error } = await supabase.storage.from('gallery').upload(filename, file);
+    const { error } = await supabase.storage.from('gallery').upload(filename, file);
     if (error) { alert('Upload failed: ' + error.message); setUploading(false); return null; }
     const { data: { publicUrl } } = supabase.storage.from('gallery').getPublicUrl(filename);
     setUploading(false);

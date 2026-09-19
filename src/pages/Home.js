@@ -11,12 +11,12 @@ const HERO_SLIDES = [
 ];
 
 const SERVICES = [
-  { icon: '🚗', title: 'Full Exterior Conversion', desc: 'Complete exterior transformation — body kits, bumpers, panels and full restorations that change how your vehicle commands the road.' },
-  { icon: '🪑', title: 'Full Interior Conversion', desc: 'Custom interior overhauls from dashboard to boot — premium upholstery, trim, lighting and infotainment upgrades.' },
-  { icon: '🎨', title: 'Painting & Buffing', desc: 'Professional automotive painting, clear coat application, buffing and polishing that restores your finish to showroom-plus condition.' },
-  { icon: '🔧', title: 'Body Work', desc: 'Dent removal, panel straightening, rust treatment and accident damage restoration — structural and cosmetic integrity guaranteed.' },
-  { icon: '⚡', title: 'Electrical Repairs', desc: 'Full electrical diagnostics and repairs — sensors, wiring, ECU faults and everything in between.' },
-  { icon: '✨', title: 'Upgrade & Styling', desc: 'Custom styling upgrades — chrome deletion, body kit fitting, spoilers, skirts and aesthetic enhancements tailored to your taste.' },
+  { icon: '/images/home-exterior.png', title: 'Full Exterior Conversion', desc: 'Complete exterior transformation — body kits, bumpers, panels and full restorations that change how your vehicle commands the road.' },
+  { icon: '/images/home-interior.png', title: 'Full Interior Conversion', desc: 'Custom interior overhauls from dashboard to boot — premium upholstery, trim, lighting and infotainment upgrades.' },
+  { icon: '/images/home-painting.png', title: 'Painting & Buffing', desc: 'Professional automotive painting, clear coat application, buffing and polishing that restores your finish to showroom-plus condition.' },
+  { icon: '/images/home-bodywork.png', title: 'Body Work', desc: 'Dent removal, panel straightening, rust treatment and accident damage restoration — structural and cosmetic integrity guaranteed.' },
+  { icon: '/images/home-electrical.png', title: 'Electrical Repairs', desc: 'Full electrical diagnostics and repairs — sensors, wiring, ECU faults and everything in between.' },
+  { icon: '/images/home-upgrade.png', title: 'Upgrade & Styling', desc: 'Custom styling upgrades — chrome deletion, body kit fitting, spoilers, skirts and aesthetic enhancements tailored to your taste.' },
 ];
 
 function useCountUp(target, active) {
@@ -210,7 +210,14 @@ function ServiceCard({ service }) {
   const [hovered, setHovered] = useState(false);
   return (
     <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ background: hovered ? 'var(--bg-card)' : '#242424', border: `1px solid ${hovered ? 'var(--accent-blue)' : 'var(--border)'}`, borderRadius: '14px', padding: '1.75rem', transition: 'all 0.3s cubic-bezier(0.4,0,0.2,1)', transform: hovered ? 'translateY(-4px)' : 'translateY(0)', boxShadow: hovered ? '0 12px 40px rgba(59,174,232,0.12)' : 'none', cursor: 'default' }}>
-      <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{service.icon}</div>
+      <img
+        src={service.icon}
+        alt=""
+        aria-hidden="true"
+        width="64"
+        height="64"
+        style={{ display: 'block', width: '64px', height: '64px', objectFit: 'contain', marginBottom: '1rem' }}
+      />
       <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>{service.title}</h3>
       <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{service.desc}</p>
     </div>

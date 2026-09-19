@@ -33,12 +33,53 @@ export default function Gallery() {
   const filtered = filter === 'all' ? items : items.filter(i => i.category === filter);
 
   return (
-    <main style={{ paddingTop: '5rem' }}>
-      <section style={{ background: 'linear-gradient(135deg, #0d1a26 0%, var(--bg-primary) 100%)', padding: '5rem 0 4rem' }}>
-        <div className="container">
+    <main style={{ paddingTop: 0 }}>
+      {/* HEADER WITH FULL-WIDTH VIDEO BACKGROUND */}
+      <section
+        style={{
+          position: 'relative',
+          overflow: 'hidden',
+          background: 'linear-gradient(135deg, #0d1a26 0%, var(--bg-primary) 100%)',
+          padding: 'clamp(7rem, 16vw, 10rem) 0 clamp(3rem, 8vw, 4rem)',
+          minHeight: 'clamp(340px, 60vh, 560px)',
+          display: 'flex',
+          alignItems: 'center',
+        }}
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            inset: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center',
+            zIndex: 0,
+          }}
+        >
+          <source src="/images/gallery-hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Dark blue overlay so the text stays readable */}
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            background: 'linear-gradient(135deg, rgba(13,26,38,0.85) 0%, rgba(20,20,20,0.55) 100%)',
+          }}
+        />
+
+        <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
           <span className="section-label">Our Work</span>
-          <h1 className="section-title" style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>Gallery</h1>
-          <p className="section-subtitle">Real transformations. Every photo tells a story of what NEOS can do.</p>
+          <h1 className="section-title" style={{ fontSize: 'clamp(2.5rem,5vw,4rem)', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>Gallery</h1>
+          <p className="section-subtitle" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>Real transformations. Every photo tells a story of what NEOS can do.</p>
         </div>
       </section>
 

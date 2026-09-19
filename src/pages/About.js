@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const BRANDS = ['Toyota', 'Lexus', 'Mercedes-Benz', 'Range Rover'];
 const VALUES = [
-  { icon: '🎯', title: 'Precision First', desc: 'Every conversion is engineered with exact tolerances. We don\'t cut corners — we eliminate them.' },
-  { icon: '🛡️', title: 'Quality Guaranteed', desc: 'We stand behind every job we do. From electrical to bodywork, our standards don\'t move.' },
-  { icon: '🔬', title: 'Specialist Focus', desc: 'We focus on four premium brands so we can know them deeply, not broadly.' },
-  { icon: '⚡', title: 'Modern Methods', desc: 'We combine experienced hands with modern diagnostics and equipment for the best outcome.' },
+  { icon: '/images/icon-precision.png', title: 'Precision First', desc: 'Every conversion is engineered with exact tolerances. We don\'t cut corners — we eliminate them.' },
+  { icon: '/images/icon-quality.png', title: 'Quality Guaranteed', desc: 'We stand behind every job we do. From electrical to bodywork, our standards don\'t move.' },
+  { icon: '/images/icon-specialist.png', title: 'Specialist Focus', desc: 'We focus on four premium brands so we can know them deeply, not broadly.' },
+  { icon: '/images/icon-modern.png', title: 'Modern Methods', desc: 'We combine experienced hands with modern diagnostics and equipment for the best outcome.' },
 ];
 
 export default function About() {
@@ -77,7 +77,14 @@ export default function About() {
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-blue)'; e.currentTarget.style.transform = 'translateY(-4px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
-                <div style={{ fontSize: '2rem', marginBottom: '1rem' }}>{v.icon}</div>
+                <img
+                  src={v.icon}
+                  alt=""
+                  aria-hidden="true"
+                  width="64"
+                  height="64"
+                  style={{ display: 'block', width: '64px', height: '64px', objectFit: 'contain', marginBottom: '1rem' }}
+                />
                 <h3 style={{ fontWeight: 700, marginBottom: '0.6rem', color: 'var(--text-primary)' }}>{v.title}</h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', lineHeight: 1.7 }}>{v.desc}</p>
               </div>

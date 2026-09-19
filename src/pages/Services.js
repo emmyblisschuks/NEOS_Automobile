@@ -3,42 +3,42 @@ import { Link } from 'react-router-dom';
 
 const SERVICES = [
   {
-    icon: '⚙️',
+    icon: '/images/icon-engine.png',
     title: 'Engine Conversion & Swap',
     category: 'Mechanical',
     desc: 'Complete engine swaps engineered to factory tolerances. We source, install, and tune replacement or performance engines for Toyota, Lexus, Benz, and Range Rover platforms.',
     details: ['Engine sourcing & vetting', 'Full engine swap & mounting', 'ECU reprogramming & tuning', 'Cooling & fuel system adaptation', 'Post-swap diagnostics & road test'],
   },
   {
-    icon: '🚗',
+    icon: '/images/icon-exterior.png',
     title: 'Full Exterior Conversion',
     category: 'Bodywork',
     desc: 'Complete exterior transformation — body kits, panel replacement, bumper swaps, and full restorations that change how your vehicle looks and how it presents on the road.',
     details: ['Body kit fitting & alignment', 'Panel replacement & repair', 'Bumper & grille conversion', 'Fender & door work', 'Chrome deletion & vinyl wrap prep'],
   },
   {
-    icon: '🪑',
+    icon: '/images/icon-interior.png',
     title: 'Full Interior Conversion',
     category: 'Interior',
     desc: 'Custom interior overhauls from dashboard to boot. We transform cabins with premium materials, updated electronics, and custom upholstery that matches your taste.',
     details: ['Custom seat upholstery', 'Dashboard & trim conversion', 'Infotainment system upgrade', 'Ambient lighting installation', 'Headliner & carpet replacement'],
   },
   {
-    icon: '⚡',
+    icon: '/images/icon-electrical.png',
     title: 'Electrical Repairs',
     category: 'Electrical',
     desc: 'From faulty sensors to full wiring harness issues — we diagnose and repair automotive electrical faults using modern scan tools and years of hands-on experience.',
     details: ['Full electrical diagnostics', 'Wiring harness repair/replace', 'ECU faults & programming', 'Sensor replacements', 'Battery & alternator service'],
   },
   {
-    icon: '🎨',
+    icon: '/images/icon-painting.png',
     title: 'Painting & Buffing',
     category: 'Finishing',
     desc: 'Professional automotive painting from single panels to full resprays. Our buffing and polishing service restores faded or scratched paint to factory-plus condition.',
     details: ['Full vehicle respray', 'Single panel spot painting', 'Colour-matched touch-ups', 'Machine polishing & buffing', 'Paint protection finishing'],
   },
   {
-    icon: '🔧',
+    icon: '/images/icon-bodywork.png',
     title: 'Body Work',
     category: 'Bodywork',
     desc: 'Dents, rust, accident damage, panel misalignment — we straighten, treat, and restore vehicle bodies to structural and cosmetic integrity.',
@@ -92,7 +92,14 @@ export default function Services() {
                 onMouseLeave={e => { if (active !== i) { e.currentTarget.style.borderColor = 'var(--border)'; e.currentTarget.style.transform = 'translateY(0)'; } }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '2.2rem' }}>{service.icon}</div>
+                  <img
+                    src={service.icon}
+                    alt=""
+                    aria-hidden="true"
+                    width="72"
+                    height="72"
+                    style={{ display: 'block', width: '72px', height: '72px', objectFit: 'contain' }}
+                  />
                   <span style={{
                     fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em',
                     textTransform: 'uppercase', color: 'var(--accent-blue)',
